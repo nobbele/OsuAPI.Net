@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>nobbele</Authors>
+    <PackageId>OsuAPI.Net</PackageId>
+    <RepositoryUrl>https://github.com/nobbele/OsuAPI.Net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>osu, api</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
