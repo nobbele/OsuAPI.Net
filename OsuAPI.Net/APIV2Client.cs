@@ -57,23 +57,11 @@ namespace OsuAPI.Net
             return stepResult;
         }
 
-        public class AuthenticationMidStep
+        public static async Task<APIV2Token> FinalizeAuthenticationAsync(string client_secret, AuthenticationStep step)
         {
-            internal HttpListenerContext context;
-        }
-
-        public static async Task<AuthenticationMidStep> RegisterAuthenticationAsync(AuthenticationStep step)
-        {
-            return new AuthenticationMidStep()
-            {
-                context = await step.listener.GetContextAsync()
-            };
-        }
-
-        public static async Task<APIV2Token> FinalizeAuthenticationAsync(string client_secret, AuthenticationStep step, AuthenticationMidStep midStep)
-        {
-            var request = midStep.context.Request;
-            var response = midStep.context.Response;
+            var context = await step.listener.GetContextAsync();
+            var request = context.Request;
+            var response = context.Response;
 
             string responseString = "<html><body>You may now close this tab, go back to the application</body></html>";
             byte[] buffer = Encoding.UTF8.GetBytes(responseString);

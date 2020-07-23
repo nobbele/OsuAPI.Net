@@ -40,8 +40,7 @@ namespace OsuAPI.Net.Tests
                     Console.WriteLine(e.Message);
                 }
 
-                var midStep = APIV2Client.RegisterAuthenticationAsync(step).Result;
-                config.Token = APIV2Client.FinalizeAuthenticationAsync(config.ClientSecret, step, midStep).Result;
+                config.Token = APIV2Client.FinalizeAuthenticationAsync(config.ClientSecret, step).Result;
             }
 
             apiClient = new APIV2Client(config.Token.AccessToken);
