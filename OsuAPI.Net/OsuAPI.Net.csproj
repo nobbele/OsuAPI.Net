@@ -7,6 +7,7 @@
     <RepositoryUrl>https://github.com/nobbele/OsuAPI.Net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>osu, api</PackageTags>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
