@@ -51,8 +51,15 @@ namespace OsuAPI.Net.Tests
         {
             var user = await apiClient.QueryAsync(new GetUserRequest(10006423));
 
-
             Assert.Equal("nobbele", user.Username);
+        }
+
+        [Fact]
+        public async Task TestGetUser2()
+        {
+            var user = await apiClient.QueryAsync(new GetUserRequest(2757689));
+
+            Assert.True(user.Badges.Length >= 24);
         }
     }
 }
